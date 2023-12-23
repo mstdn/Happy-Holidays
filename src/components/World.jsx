@@ -8,6 +8,7 @@ import Forest from "./Forest"
 import { Cat } from "./models/Cat"
 import { Spaceship } from "./models/Spaceship"
 import { Present } from "./models/Present"
+import { Stag } from "./models/Stag"
 
 function mobilePositions()
 {
@@ -101,16 +102,25 @@ export default function World()
                 />
                 { isDesktop && (
                     <Present 
-                        position={ [ 4, - 2, - 10 ] }
-                        scale={ 0.1 }
+                        position={ [ 2, - 2, 0 ] }
+                        rotation-y={ - Math.PI * 0.2 }
+                        scale={ 0.05 }
                     />
                 ) }
                 { isMobile && (
                     <Present 
-                        position={ [ 2, - 2, - 10 ] }
-                        scale={ 0.1 }
+                        position={ [ 0.8, - 2, 0.2 ] }
+                        rotation-y={ - Math.PI * 0.2 }
+                        scale={ 0.04 }
                     />
                 ) }
+            </group>
+            <group>
+                <Stag 
+                    position={ [ 4, - 2, - 20 ] }
+                    rotation-y={ - Math.PI * 0.1 }
+                    scale={ 0.8 }
+                />
             </group>
             <Forest />
             <Platform />
