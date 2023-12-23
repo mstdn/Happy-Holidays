@@ -9,6 +9,16 @@ import { Cat } from "./models/Cat"
 import { Spaceship } from "./models/Spaceship"
 import { Present } from "./models/Present"
 
+function mobilePositions()
+{
+    if(isMobile)
+    {
+        return [ 0.5, 0, - 6 ]
+    } else if(isDesktop)
+    {
+        return [ 1.5, 0, - 5 ]
+    }
+}
 export default function World()
 {
     return(
@@ -18,33 +28,66 @@ export default function World()
                 position={ [ 0, - 3, - 1 ] }
             />
             <group
-                position={ [ 1.5, 0, - 5 ] }
+                position={ mobilePositions() }
                 rotation-y={ - Math.PI * 0.05 }
             >
-                <Snowman
-                    position={ [ - 2, - 3.2, 0 ] }
-                    rotation-y={ Math.PI * 0.1 }
-                    scale={ 0.05 }
-                />
-                <Float
-                    position={ [ 1, - 1, 0 ] }
-                >
-                    <Text
-                        font="./assets/fonts/xmas-1.otf"
-                        fontSize={ 1 }
-                        color={ "red" }
+                { isMobile && (
+                    <Snowman
+                        position={ [ - 2, - 3.2, - 2 ] }
+                        rotation-y={ Math.PI * 0.1 }
+                        scale={ 0.05 }
+                    />
+                ) }
+                { isDesktop && (
+                    <Snowman
+                        position={ [ - 2, - 3.2, 0 ] }
+                        rotation-y={ Math.PI * 0.1 }
+                        scale={ 0.05 }
+                    />
+                )}
+
+                { isDesktop && (
+                    <Float
+                        position={ [ 1, - 1, 0 ] }
                     >
-                        Happy Holidays
-                    </Text>
-                    <Text
-                        position={ [ 0, - 0.4, 0 ] }
-                        font="./assets/fonts/xmas-1.otf"
-                        fontSize={ 0.5 }
-                        color={ "red" }
+                        <Text
+                            font="./assets/fonts/xmas-1.otf"
+                            fontSize={ 1 }
+                            color={ "red" }
+                        >
+                            Happy Holidays
+                        </Text>
+                        <Text
+                            position={ [ 0, - 0.4, 0 ] }
+                            font="./assets/fonts/xmas-1.otf"
+                            fontSize={ 0.5 }
+                            color={ "red" }
+                        >
+                            and a meowful new year!
+                        </Text>
+                    </Float>
+                ) }
+                { isMobile && (
+                    <Float
+                        position={ [ 0, - 1, 3.7 ] }
                     >
-                        and a meowful new year!
-                    </Text>
-                </Float>
+                        <Text
+                            font="./assets/fonts/xmas-1.otf"
+                            fontSize={ 0.8 }
+                            color={ "red" }
+                        >
+                            Happy Holidays
+                        </Text>
+                        <Text
+                            position={ [ 0, - 0.4, 0 ] }
+                            font="./assets/fonts/xmas-1.otf"
+                            fontSize={ 0.5 }
+                            color={ "red" }
+                        >
+                            and a meowful new year!
+                        </Text>
+                    </Float>
+                ) }
             </group>
 
             <Cat 
@@ -56,10 +99,18 @@ export default function World()
                     position={ [ 0, 8, - 35 ] }
                     scale={ 2 }
                 />
-                <Present 
-                    position={ [ 4, - 2, - 10 ] }
-                    scale={ 0.1 }
-                />
+                { isDesktop && (
+                    <Present 
+                        position={ [ 4, - 2, - 10 ] }
+                        scale={ 0.1 }
+                    />
+                ) }
+                { isMobile && (
+                    <Present 
+                        position={ [ 2, - 2, - 10 ] }
+                        scale={ 0.1 }
+                    />
+                ) }
             </group>
             <Forest />
             <Platform />

@@ -6,16 +6,16 @@ export default function Experience()
 {
     return <>
         {/* <OrbitControls /> */}
-        <PresentationControls
+        {/* <PresentationControls
             global
             rotation={ [ 0.13, 0.1, 0 ] }
             polar={ [ - 0.4, 0.2 ] }
             azimuth={ [ - 0.5, 0.5 ] }
             config={ { mass: 2, tension: 400 } }
             snap={ { mass: 4, tension: 400 } }
-        >
+        > */}
             <Lights />
             <World />
-        </PresentationControls>
+        {/* </PresentationControls> */}
     </>
 }
