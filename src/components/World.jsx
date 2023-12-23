@@ -42,7 +42,7 @@ export default function World()
                         fontSize={ 0.5 }
                         color={ "red" }
                     >
-                        and a wonderful new year!
+                        and a meowful new year!
                     </Text>
                 </Float>
             </group>

@@ -6,9 +6,11 @@ export function Present(props)
 {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("./assets/models/present.glb");
-    const { actions } = useAnimations(animations, group);
-    
-    useEffect(() => {
+    const { actions } = useAnimations(animations, group)
+
+    const setClick = () =>
+    {
+      // clicked = true
         const action = actions["Take 001"];
         action.setLoop(THREE.LoopOnce); // Set the animation to play only once
         action.setDuration(action.getClip().duration * 2); // Set the duration to play slower (multiply by a factor)
@@ -17,9 +19,21 @@ export function Present(props)
         setTimeout(() => {
             group.current.visible = false
         }, 1500)
-    }, []);
+    }
+    
+    // useEffect(() => {
+    //     const action = actions["Take 001"];
+    //     action.setLoop(THREE.LoopOnce); // Set the animation to play only once
+    //     action.setDuration(action.getClip().duration * 2); // Set the duration to play slower (multiply by a factor)
+    //     action.play()
+
+    //     setTimeout(() => {
+    //         group.current.visible = false
+    //     }, 1500)
+    // }, [])
+
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group onClick={ setClick } ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group
