@@ -32,7 +32,7 @@ export default function World()
                         fontSize={ 1 }
                         color={ "red" }
                     >
-                        Merry Xmas!
+                        Happy Holidays
                     </Text>
                     <Text
                         position={ [ 0, - 0.4, 0 ] }
@@ -40,7 +40,7 @@ export default function World()
                         fontSize={ 0.5 }
                         color={ "red" }
                     >
-                        and a happy new year!
+                        and a wonderful new year!
                     </Text>
                 </Float>
             </group>

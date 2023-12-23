@@ -1,4 +1,4 @@
-# Merry Xmas
+# Happy Holidays
 
 ```
 npm i
