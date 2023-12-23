@@ -7,11 +7,12 @@ export default function Lights()
             sunPosition={ [ 0, 20, - 10 ] }
         />
         <Environment
-            preset='sunset' 
+            // preset='sunset'
+            files="./assets/images/light.hdr"
         />
         <directionalLight
             castShadow
-            position={ [ 0, 20, - 10 ] }
+            position={ [ 0, 20, 20 ] }
             intensity={ 1 }
             shadow-camera-near={ 1 }
             shadow-camera-far={ 500 }

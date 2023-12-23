@@ -6,6 +6,8 @@ import Environment from "./Environment"
 import Platform from "./Platform"
 import Forest from "./Forest"
 import { Cat } from "./models/Cat"
+import { Spaceship } from "./models/Spaceship"
+import { Present } from "./models/Present"
 
 export default function World()
 {
@@ -49,7 +51,16 @@ export default function World()
                 position={ [ 15, - 2.2, - 3.8 ] }
                 rotation-y={ - Math.PI * 0.5 }
             />
-            
+            <group>
+                <Spaceship 
+                    position={ [ 0, 8, - 35 ] }
+                    scale={ 2 }
+                />
+                <Present 
+                    position={ [ 4, - 2, - 10 ] }
+                    scale={ 0.1 }
+                />
+            </group>
             <Forest />
             <Platform />
         </group>
