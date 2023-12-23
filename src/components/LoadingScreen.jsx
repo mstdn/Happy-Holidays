@@ -49,7 +49,7 @@ export const LoadingScreen = (props) =>
               paddingTop: "25px",
             }}
           >
-            Merry Xmas!
+            Happy Holidays!
           </button>
         )}
       { progress !== 100 && (
